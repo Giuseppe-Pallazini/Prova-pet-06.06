@@ -1,4 +1,4 @@
-import { inserirPet } from "../repository/petRepository.js"
+import { ConsultarTodos, inserirPet } from "../repository/petRepository.js"
 import { Router } from 'express'
 
 const server = Router();
@@ -14,4 +14,17 @@ server.post('/pet', async (req,resp) => {
         })
     }
 })
-export default server;
+
+
+server.get('/pet', async (req,resp) => {
+    try {
+        const BuscarTodos = await ConsultarTodos()
+        resp.send(BuscarTodos)
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+export default server
