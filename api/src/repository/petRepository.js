@@ -11,7 +11,8 @@ return resposta;
 
 
 export async function ConsultarTodos(){
-    const comando = `select nm_pet      nome
+    const comando = `select id_pet      ID,
+                        nm_pet          Nome
     from tb_pet`
     const [linhas] = await con.query (comando)
     return linhas

@@ -20,12 +20,6 @@ function App() {
 
       <input type={'text'} placeholder='Nome:' value={nome} onChange={e => setNome(e.target.value)} />
       <button type="button" onClick={SalvarClick}> Salvar </button>
-      <br />
-      <br />
-      <br />
-      
-
-      <h2> Tabela de Pets: </h2>
 
     </main>
   );
