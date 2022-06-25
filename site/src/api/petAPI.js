@@ -11,3 +11,9 @@ export async function CadastrarPet(nome) {
     }) 
     return resposta.data
 }
+
+
+export async function ListarTodosPets() {
+    const resposta = await api.get('/pet');
+    return resposta.data;
+}
